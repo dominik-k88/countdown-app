@@ -1,0 +1,157 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-transform: uppercase;
+}
+
+:root {
+    --clr-yell: #dbff00;
+    --clr-grey: #909467;
+    --clr-white: #fafbe9;
+    --clr-black: #1c1d0d;
+    --clr-orange:orange;
+    --clr-red:rgb(255, 79, 79);
+    --trans-time:0.2s;
+}
+
+body {
+    background-color: var(--clr-grey);
+    width: 100vw;
+    height: 100vh;
+    padding: 1rem;    
+}
+
+#main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;       
+}
+
+#input-box {
+    position: relative;
+    width: 50%;
+    max-width: 80rem;    
+    border: 4px solid;
+    border-radius: 1em;
+    background-color: var(--clr-black);
+    color: var(--clr-white);
+    margin-bottom: 1em;
+}
+
+#input-box>div {
+    margin-bottom: 1.5rem;
+    &#checkbox{
+        margin-bottom: 1rem;
+    }
+}
+
+#input-box .h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+#insert-value {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    font-size: 1.5rem;
+    padding-top:.5em;
+}
+
+#insert-value input {
+    color: var(--clr-black);
+    height: 4rem;
+    min-width: calc(50% + 2rem);
+    max-width: calc(70% + 2rem);
+    border-radius: .6em;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+#checkbox {
+    display: flex;
+    justify-content: center;
+    font-size: 1.5em;
+}
+
+#checkbox label {
+    margin-left: 1.2em;
+}
+.btn{
+    padding: .5em;
+    margin-top: 0;
+    margin-left:1em;    
+    font-size: 1em;
+    border-radius: 0.5em;
+    border: 4px solid var(--clr-white);
+    background-color: var(--clr-black);
+    color: var(--clr-white);  
+    transition: border var(--trans-time) linear, color var(--trans-time) linear,background-color var(--trans-time) linear; 
+    cursor: pointer;
+}
+
+#sub-btn:hover{
+    border: 4px solid transparent;
+    background-color: var(--clr-yell);
+    color: var(--clr-black);  
+    transition: border var(--trans-time) linear, color var(--trans-time) linear,background-color var(--trans-time) linear; 
+}
+#sub-btn.paused:hover{
+    color:var(--clr-orange);
+    border: 4px solid var(--clr-orange);
+    background-color: var(--clr-black);
+    transition: border var(--trans-time) linear, color var(--trans-time) linear,background-color var(--trans-time) linear; 
+    
+}
+#stop-btn{
+    border: 4px solid var(--clr-red);    
+    color: var(--clr-red); 
+    transition: border var(--trans-time) linear, color var(--trans-time) linear,background-color var(--trans-time) linear; 
+}
+#stop-btn:hover{
+    border: 4px solid transparent;
+    color: var(--clr-black); 
+    background-color: var(--clr-red);
+    font-weight: bold;
+    transition: border var(--trans-time) linear, color var(--trans-time) linear,background-color var(--trans-time) linear; 
+}
+#output-box {
+    position: absolute;
+    top: 0;
+    background-color: var(--clr-black);
+    color: var(--clr-yell);
+    border: 4px solid transparent;
+    border-bottom: 4px solid;
+    border-radius: 1em 1em 0 0;
+    padding-bottom: .5em;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+#output-box #timer {
+    font-size: 6em;
+    margin-top:0.2em;
+}
+#output-box #final-msg{
+    margin-bottom:.8em;    
+}
+
+.show {
+    visibility: visible;
+}
+
+.hide {
+    visibility: hidden;
+}

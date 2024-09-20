@@ -1,0 +1,3 @@
+- Set a bottom border in timer box according to countdown status ( green if running, orange if pausing)
+- responsibility
+- sound alarm to the finish of countdown
