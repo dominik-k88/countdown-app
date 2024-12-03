@@ -14,7 +14,8 @@ let isRunning = false
 let isPaused = false
 outputBox.classList.add("hide")    
 let [hours, minutes, seconds] = [0, 0, 0]
-// const signal = new Audio("test.mp3")
+const signal = new Audio("Alarm.mp3")
+signal.loop = true
 
 const getCheckbox = () => {
     let checked = ""
@@ -104,8 +105,7 @@ function startCountdown() {
         updateDOM(secondsSpan, seconds)
 
     } else {        
-    stopCount()
-        // signal.play()
+    stopCount()       
     }
 }
 function pauseContinue() {    
@@ -141,9 +141,12 @@ function stopCount() {
             finalMsg.textContent = "Countdown is finished"
             finalMsg.style.color = "red"
             subBtn.textContent = "Start"
-            subBtn.classList.remove("paused")
-            setTimeout(()=>{
+            subBtn.classList.remove("paused")            
+            setTimeout(()=>{                   
+                signal.play()                           
                 alert("Finished")
+                signal.pause()
+                signal.currentTime = 0
                 reset()
             },0)
         }else{
@@ -161,7 +164,6 @@ function stopCount() {
             }
         }        
     }
-
     /** SUPPORT FUNCTIONS End**/
 
 subBtn.addEventListener("click", () => {
